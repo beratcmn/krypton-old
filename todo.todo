@@ -1,2 +1,7 @@
-- [] todo item one
-- [x] completed item
+- [ ] Dil için gerekli diğer özellikleri ekle.
+-- [ ] while döngüsü ekle .
+-- [ ] Fonskiyon desteği ekle.
+-- [ ] Sınıf desteği ekle. (Dataclass öncelikli olabilir.)
+- [ ] Çekirdek özellikleri kapsayan gereksinimler için pip paketi oluştur.
+- [ ] pip paketinden sonra libs dosyasından kurtul.
+- [ ] Kurulum için .bat dosyası hazırla.
