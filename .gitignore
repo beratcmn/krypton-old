@@ -129,8 +129,8 @@ dmypy.json
 .pyre/
 
 # Custom
-*.tr
-test*
 /output
 /test
+*.tr
+test*
 playground*
