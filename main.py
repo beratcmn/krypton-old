@@ -1,7 +1,5 @@
 import os
 import sys
-import time
-from modules import libs
 
 
 def listToString(_list):
@@ -72,6 +70,17 @@ def EvalLine(_line: str):
         line = listToString(temp_list)
         line = line.replace(" ve ", " and ")
         line = line.replace(" veya ", " or ")
+
+    # for
+    if "içindeki herbir" in _line and "için" in _line:
+        temp_list = _line.split()
+        if (temp_list.index("içindeki") == 1) and (temp_list.index("herbir") == 2) and (temp_list.index("için") == 4):
+            temp_list.remove("içindeki")
+            temp_list.remove("herbir")
+            temp_list.remove("için")
+
+        line = "for " + str(temp_list[1]) + " in " + str(temp_list[0]) + ":"
+
     # #
     if _line[:2] == "//":
         temp_list = list(_line)
@@ -116,7 +125,8 @@ def Compile(_filename: str, _run: bool):
 
     outputLines = []
 
-    outputLines.append("from modules import libs") #change the implementation of libs, instead add the whole code to the compiled code or create the file everytime a new file compiles
+    # TODO change the implementation of libs, instead add the whole code to the compiled code or create the file everytime a new file compiles
+    outputLines.append("from src import libs")
 
     filename_output = _filename.replace(".tr", ".py").strip()
 
