@@ -1,6 +1,8 @@
 import os
 import sys
 
+extension = ".kr"
+
 
 def listToString(_list):
 
@@ -121,6 +123,8 @@ def EvalLine(_line: str):
 
 
 def Compile(_filename: str, _run: bool):
+    global extension
+
     os.system("cls")
 
     outputLines = []
@@ -128,7 +132,7 @@ def Compile(_filename: str, _run: bool):
     # TODO change the implementation of libs, instead add the whole code to the compiled code or create the file everytime a new file compiles
     outputLines.append("from src import libs")
 
-    filename_output = _filename.replace(".tr", ".py").strip()
+    filename_output = _filename.replace(extension, ".py").strip()
 
     inputFile = open(_filename, "r", encoding="utf-8")
     inputLines = [x.rstrip("\n") for x in inputFile.readlines()]
