@@ -87,6 +87,7 @@ def EvalLine(_line: str):
     if _line[:9] == "fonksiyon":
         temp_list = list(_line)
         temp_list[:9] = "def"
+        temp_list.append(":")
 
         line = listToString(temp_list)
 
