@@ -2,6 +2,7 @@
 -- [ ] while döngüsü ekle .
 -- [X] Fonskiyon desteği ekle.
 -- [ ] Sınıf desteği ekle. (Dataclass öncelikli olabilir.)
+-- [ ] break ekle.
 - [ ] README yaz.
 - [ ] Çekirdek özellikleri kapsayan gereksinimler için pip paketi oluştur.
 - [ ] pip paketinden sonra libs dosyasından kurtul.
