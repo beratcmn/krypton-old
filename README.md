@@ -1,4 +1,9 @@
-![Krypton](/src/icon_180x180.png)
+<p align="center">
+  <a href="#"><img src="https://raw.githubusercontent.com/beratcmn/krypton/main/src/icon_180x180.png" alt="Krypton"></a>
+</p>
+<p align="center">
+    <em>Krypton, her yaştan öğrenenler için geliştirildi!</em>
+</p>
 
 # Krypton'a hoşgeldin!
 
