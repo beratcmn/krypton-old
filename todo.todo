@@ -1,6 +1,6 @@
 - [ ] Dil için gerekli diğer özellikleri ekle.
 -- [ ] while döngüsü ekle .
--- [ ] Fonskiyon desteği ekle.
+-- [X] Fonskiyon desteği ekle.
 -- [ ] Sınıf desteği ekle. (Dataclass öncelikli olabilir.)
 - [ ] README yaz.
 - [ ] Çekirdek özellikleri kapsayan gereksinimler için pip paketi oluştur.
