@@ -35,8 +35,13 @@ def EvalLine(_line: str):
     if _line[:8] == "değişken":
         temp_list = list(_line)
         temp_list[:8] = ""
-
-        line = listToString(temp_list)
+        if "=" in _line:
+            line = listToString(temp_list)
+        else:
+            line = str(listToString(temp_list)).strip()
+            temp_list = list(line)
+            temp_list[:1] = temp_list[:1][0] + " = None"
+            line = listToString(temp_list)
 
     # print ()
     if _line[:6] == "yazdır":
@@ -104,13 +109,6 @@ def EvalLine(_line: str):
 
         line = listToString(temp_list)
 
-    # #
-    if _line[:2] == "//":
-        temp_list = list(_line)
-        temp_list[:2] = "#"
-
-        line = listToString(temp_list)
-
     # "    "
     if _line[:1] == "?":
         temp_list = list(_line)
@@ -156,8 +154,8 @@ def Compile(_filename: str, _run: bool):
     inputLines = [x.rstrip("\n") for x in inputFile.readlines()]
 
     for _il in inputLines:
-        # because of this dynamic declaring any python code will be valid.
-        # TODO another aproach for the defs would be adding them to a global list then interpreting them.
+        # because of the dynamic declaring any python code will be valid in krypton.
+        # ? another aproach for the defs would be adding them to a global list then interpreting them.
         newLine = EvalLine(_il) if EvalLine(_il) != "" else _il
         # delete ( and newLine != "") if you want an exact translation in terms of spaces and line breaks.
         if newLine != None and newLine != "":
@@ -178,8 +176,12 @@ def Compile(_filename: str, _run: bool):
 
 if __name__ == "__main__":
     # compile()
-    filename_raw = sys.argv[1:][0]
-    dont_run = not (False if len(
-        sys.argv) <= 2 else True if sys.argv[1:][1] == "çalıştırma" else False)
-    filename = filename_raw.replace(".\\", "")
+    if len(sys.argv) > 1:
+        filename_raw = sys.argv[1:][0]
+        dont_run = not (False if len(
+            sys.argv) <= 2 else True if sys.argv[1:][1] == "çalıştırma" else False)
+        filename = filename_raw.replace(".\\", "")
+    else:
+        filename = input("Dosya ismi giriniz: ")
+        dont_run = False
     Compile(filename, dont_run)
