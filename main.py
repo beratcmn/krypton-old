@@ -141,7 +141,6 @@ def Compile(_filename: str, _run: bool):
 
     outputLines = []
 
-    # TODO create a pip package
     outputLines.append("from src import libs")
 
     filename_output = _filename.replace(extension, ".py").strip()
@@ -151,9 +150,9 @@ def Compile(_filename: str, _run: bool):
 
     for _il in inputLines:
         # because of this dynamic declaring any python code will be valid.
-        # another aproach for the defs would be adding them to a global list then interpreting them.
+        # TODO another aproach for the defs would be adding them to a global list then interpreting them.
         newLine = EvalLine(_il) if EvalLine(_il) != "" else _il
-        # delete ( and newLine != "") if you want an exact translation
+        # delete ( and newLine != "") if you want an exact translation in terms of spaces and line breaks.
         if newLine != None and newLine != "":
             outputLines.append(newLine)
 
