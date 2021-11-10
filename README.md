@@ -1,4 +1,4 @@
-![Krypton](icon_180x180.png)
+![Krypton](/src/icon_180x180.png)
 
 # Krypton'a hoşgeldin!
 
