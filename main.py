@@ -40,7 +40,8 @@ def EvalLine(_line: str):
         else:
             line = str(listToString(temp_list)).strip()
             temp_list = list(line)
-            temp_list[:1] = temp_list[:1][0] + " = None"
+            temp_list[:len(temp_list)] = temp_list[:len(
+                temp_list)][0] + " = None"
             line = listToString(temp_list)
 
     # print ()
