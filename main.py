@@ -97,6 +97,13 @@ def EvalLine(_line: str):
 
         line = listToString(temp_list)
 
+    # return
+    if _line[:6] == "döndür":
+        temp_list = list(_line)
+        temp_list[:6] = "return"
+
+        line = listToString(temp_list)
+
     # #
     if _line[:2] == "//":
         temp_list = list(_line)
