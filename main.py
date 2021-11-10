@@ -90,6 +90,12 @@ def EvalLine(_line: str):
         temp_list.append(":")
 
         line = listToString(temp_list)
+    elif _line[:1] == "f" and _line[1:2] == " ":
+        temp_list = list(_line)
+        temp_list[:1] = "def"
+        temp_list.append(":")
+
+        line = listToString(temp_list)
 
     # #
     if _line[:2] == "//":
@@ -133,8 +139,6 @@ def EvalLine(_line: str):
 def Compile(_filename: str, _run: bool):
     global extension
 
-    os.system("cls")
-
     outputLines = []
 
     # TODO create a pip package
@@ -146,8 +150,9 @@ def Compile(_filename: str, _run: bool):
     inputLines = [x.rstrip("\n") for x in inputFile.readlines()]
 
     for _il in inputLines:
-        newLine = ""
-        newLine = EvalLine(_il)
+        # because of this dynamic declaring any python code will be valid.
+        # another aproach for the defs would be adding them to a global list then interpreting them.
+        newLine = EvalLine(_il) if EvalLine(_il) != "" else _il
         # delete ( and newLine != "") if you want an exact translation
         if newLine != None and newLine != "":
             outputLines.append(newLine)
@@ -160,7 +165,8 @@ def Compile(_filename: str, _run: bool):
     inputFile.close()
 
     if _run == True:
-        os.system("python " + filename_output)
+        os.system("cls")
+        os.system("python3 " + filename_output)
         os.remove(filename_output)
 
 
