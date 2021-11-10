@@ -4,7 +4,7 @@ import sys
 extension = ".kr"
 
 
-def listToString(_list):
+def listToString(_list: list):
 
     string = ""
 
@@ -83,6 +83,13 @@ def EvalLine(_line: str):
 
         line = "for " + str(temp_list[1]) + " in " + str(temp_list[0]) + ":"
 
+    # def
+    if _line[:9] == "fonksiyon":
+        temp_list = list(_line)
+        temp_list[:9] = "def"
+
+        line = listToString(temp_list)
+
     # #
     if _line[:2] == "//":
         temp_list = list(_line)
@@ -129,7 +136,7 @@ def Compile(_filename: str, _run: bool):
 
     outputLines = []
 
-    # TODO change the implementation of libs, instead add the whole code to the compiled code or create the file everytime a new file compiles
+    # TODO create a pip package
     outputLines.append("from src import libs")
 
     filename_output = _filename.replace(extension, ".py").strip()
