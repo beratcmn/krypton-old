@@ -4,6 +4,9 @@
 <p align="center">
     <em>Krypton, her yaştan öğrenenler için geliştirildi!</em>
 </p>
+<p align="center">
+ <img src="https://img.shields.io/pypi/pyversions/Django?color=%23&label=Python" alt="Desteklenen Python versiyonları.">
+</p>
 
 # Krypton'a hoşgeldin!
 
