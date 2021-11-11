@@ -4,7 +4,7 @@ import sys
 extension = ".kr"
 
 
-def listToString(_list: list):
+def ListToString(_list: list):
 
     string = ""
 
@@ -24,7 +24,7 @@ def ArrangeTabs(_line: str):
         elif _list[_list.index(i) - 1] == "    " and i == "?":
             _list[_list.index(i)] = "    "
 
-    return listToString(_list)
+    return ListToString(_list)
 
 
 def EvalLine(_line: str):
@@ -36,20 +36,20 @@ def EvalLine(_line: str):
         temp_list = list(_line)
         temp_list[:8] = ""
         if "=" in _line:
-            line = listToString(temp_list)
+            line = ListToString(temp_list)
         else:
-            line = str(listToString(temp_list)).strip()
+            line = str(ListToString(temp_list)).strip()
             temp_list = list(line)
             temp_list[:len(temp_list)] = temp_list[:len(
                 temp_list)][0] + " = None"
-            line = listToString(temp_list)
+            line = ListToString(temp_list)
 
     # print ()
     if _line[:6] == "yazdır":
         temp_list = list(_line)
         temp_list[:6] = "print"
 
-        line = listToString(temp_list)
+        line = ListToString(temp_list)
 
     # if
     if _line[:4] == "eğer":
@@ -57,7 +57,7 @@ def EvalLine(_line: str):
         temp_list[:4] = "if"
         temp_list.append(":")
 
-        line = listToString(temp_list)
+        line = ListToString(temp_list)
         line = line.replace(" ve ", " and ")
         line = line.replace(" veya ", " or ")
 
@@ -67,7 +67,7 @@ def EvalLine(_line: str):
         temp_list[:7] = "else"
         temp_list.append(":")
 
-        line = listToString(temp_list)
+        line = ListToString(temp_list)
 
     # elif
     if _line[:10] == "değilse ve":
@@ -75,7 +75,7 @@ def EvalLine(_line: str):
         temp_list[:10] = "elif"
         temp_list.append(":")
 
-        line = listToString(temp_list)
+        line = ListToString(temp_list)
         line = line.replace(" ve ", " and ")
         line = line.replace(" veya ", " or ")
 
@@ -95,49 +95,52 @@ def EvalLine(_line: str):
         temp_list[:9] = "def"
         temp_list.append(":")
 
-        line = listToString(temp_list)
+        line = ListToString(temp_list)
     elif _line[:1] == "f" and _line[1:2] == " ":
         temp_list = list(_line)
         temp_list[:1] = "def"
         temp_list.append(":")
 
-        line = listToString(temp_list)
+        line = ListToString(temp_list)
 
     # return
     if _line[:6] == "döndür":
         temp_list = list(_line)
         temp_list[:6] = "return"
 
-        line = listToString(temp_list)
+        line = ListToString(temp_list)
 
     # "    "
     if _line[:1] == "?":
         temp_list = list(_line)
         temp_list[:1] = ""
-        temp_line = listToString(temp_list)
+        temp_line = ListToString(temp_list)
         line = "?" + EvalLine(temp_line)
 
-    # ** 2
-    line = line.replace("kare(", "libs.karesi(")
+    # ^2
+    if "kare(" in _line:
+        _line = _line.replace("kare(", "libs.karesi(")
+        line = _line
 
-    # ** 3
-    line = line.replace("küp(", "libs.kupu(")
+    # ^3
+    if "küp(" in _line:
+        _line = _line.replace("küp(", "libs.kupu(")
+        line = _line
 
-    # ** 1/2
-    line = line.replace("karekök(", "libs.karekok(")
+    # ^1/2
+    if "karekök(" in _line:
+        _line = _line.replace("karekök(", "libs.karekok(")
+        line = _line
 
-    # ** 1/3
-    line = line.replace("küpkök(", "libs.kupkok(")
+    # ^1/3
+    if "küpkök(" in _line:
+        _line = _line.replace("küpkök(", "libs.kupkok(")
+        line = _line
 
-    # abs
-    line = line.replace("mutlak(", "libs.mutlak(")
-
-    # time.sleep ()
-    if _line[:5] == "bekle":
-        temp_list = list(_line)
-        temp_list[:5] = "libs.bekle"
-
-        line = listToString(temp_list)
+    # Absolute
+    if "mutlak(" in _line:
+        _line = _line.replace("mutlak(", "libs.mutlak(")
+        line = _line
 
     return ArrangeTabs(line.strip())
 
