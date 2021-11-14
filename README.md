@@ -28,3 +28,4 @@ Kurulum için "setup.bat" dosyasını çalıştırmanız yeterli. Ardından Kryp
 
 # Gereksinimler
 - Python 3.6 veya üstü
+- [Mithen](https://github.com/beratcmn/mithen)
