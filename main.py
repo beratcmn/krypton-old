@@ -119,27 +119,32 @@ def EvalLine(_line: str):
 
     # ^2
     if "kare(" in _line:
-        _line = _line.replace("kare(", "libs.karesi(")
+        _line = _line.replace("kare(", "mithen.kare(")
         line = _line
 
     # ^3
     if "küp(" in _line:
-        _line = _line.replace("küp(", "libs.kupu(")
+        _line = _line.replace("küp(", "mithen.kup(")
         line = _line
 
     # ^1/2
     if "karekök(" in _line:
-        _line = _line.replace("karekök(", "libs.karekok(")
+        _line = _line.replace("karekök(", "mithen.karekok(")
         line = _line
 
     # ^1/3
     if "küpkök(" in _line:
-        _line = _line.replace("küpkök(", "libs.kupkok(")
+        _line = _line.replace("küpkök(", "mithen.kupkok(")
         line = _line
 
     # Absolute
     if "mutlak(" in _line:
-        _line = _line.replace("mutlak(", "libs.mutlak(")
+        _line = _line.replace("mutlak(", "mithen.mutlak(")
+        line = _line
+
+    # time.sleep()
+    if "bekle(" in _line:
+        _line = _line.replace("bekle(", "mithen.bekle(")
         line = _line
 
     return ArrangeTabs(line.strip())
@@ -150,7 +155,7 @@ def Compile(_filename: str, _run: bool):
 
     outputLines = []
 
-    outputLines.append("from src import libs")
+    outputLines.append("from mithen import mithen")
 
     filename_output = _filename.replace(extension, ".py").strip()
 

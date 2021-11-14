@@ -13,3 +13,10 @@
 Selamlar, Krypton nedir? dediğini duyar gibiyim. Krypton, Python'a dönüşen bir yazılım dili. VE TAMAMEN TÜRKÇE. Evet yanlış duymadın, Python syntax'ının biraz daha yalın ve Türkçe hali gibi düşünebiliriz Krypton'u.
 
 Her ne kadar Krypton'a bir yazılım dili demek doğru olmasada yerleşik kütüphaneleri ile öğrenim sürecinde çok fazla kişiye yardımcı olacağını düşünüyorum.
+
+Krypton çalışmak için [Mithen](https://github.com/beratcmn/mithen)'e ihtiyaç duyar.
+Mithen'in son sürümünü indirmek için;
+
+```
+python3 -m pip install mithen
+```

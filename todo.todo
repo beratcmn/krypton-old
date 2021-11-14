@@ -4,7 +4,8 @@
 -- [ ] Sınıf desteği ekle. (Dataclass öncelikli olabilir.)
 -- [ ] break ekle.
 -- [ ] input ekle.
-- [ ] README yaz.
-- [ ] Çekirdek özellikleri kapsayan gereksinimler için pip paketi oluştur.
-- [ ] pip paketinden sonra libs dosyasından kurtul.
+- [X] README yaz.
+- [ ] Öğretici ve README içinde rehber hazırla.
+- [X] Çekirdek özellikleri kapsayan gereksinimler için pip paketi oluştur.
+- [X] pip paketinden sonra libs dosyasından kurtul.
 - [ ] Kurulum için .bat dosyası hazırla.
