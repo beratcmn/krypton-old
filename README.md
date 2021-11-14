@@ -15,6 +15,7 @@ Selamlar, Krypton nedir? dediğini duyar gibiyim. Krypton, Python'a dönüşen b
 Her ne kadar Krypton'a bir yazılım dili demek doğru olmasada yerleşik kütüphaneleri ile öğrenim sürecinde çok fazla kişiye yardımcı olacağını düşünüyorum.
 
 Krypton çalışmak için [Mithen](https://github.com/beratcmn/mithen)'e ihtiyaç duyar.
+
 Mithen'in son sürümünü indirmek için;
 
 ```
