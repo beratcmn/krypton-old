@@ -9,3 +9,4 @@
 - [X] Çekirdek özellikleri kapsayan gereksinimler için pip paketi oluştur.
 - [X] pip paketinden sonra libs dosyasından kurtul.
 - [ ] Kurulum için .bat dosyası hazırla.
+- [ ] Krypton için websitesi hazırla (beratcmn.github.io/krypton).
