@@ -21,3 +21,10 @@ Mithen'in son sürümünü indirmek için;
 ```
 python3 -m pip install mithen
 ```
+
+# Kurulum
+
+Kurulum için "setup.bat" dosyasını çalıştırmanız yeterli. Ardından Krypton'u istediğiniz gibi kullabilirsiniz.
+
+# Gereksinimler
+- Python 3.6 veya üstü
