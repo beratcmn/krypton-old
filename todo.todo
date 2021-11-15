@@ -1,5 +1,5 @@
 - [ ] Dil için gerekli diğer özellikleri ekle.
--- [ ] while döngüsü ekle .
+-- [X] while döngüsü ekle .
 -- [X] Fonskiyon desteği ekle.
 -- [ ] Sınıf desteği ekle. (Dataclass öncelikli olabilir.)
 -- [ ] break ekle.
