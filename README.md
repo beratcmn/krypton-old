@@ -75,6 +75,7 @@ Sonuç:
 - [x] if, else, elif yapıları
 - [x] for ve while döngüleri
 - [x] kare, karekök, küp, küpkök, mutlak değer matematiksel fonksiyonları
+- [x] askıya alma (time.sleep)
 - [ ] sınıf yapısı
 - [ ] input desteği
 - [ ] break yapısı
