@@ -31,6 +31,19 @@ Kurulum için "setup.bat" dosyasını çalıştırmanız yeterli. Ardından Kryp
 - Python 3.6 veya üstü
 - [Mithen](https://github.com/beratcmn/mithen)
 
+# Kullanım
+
+Krypton şu an için sadece terminal üstünden çalışıyor. Herhangi bir Krypton programını çalıştırmak için;
+
+```
+krypton dosyanızın_yolu/dosyanızın_adı.kr
+```
+
+Python çevirisini görmek için ise;
+```
+krypton dosyanızın_yolu/dosyanızın_adı.kr çalıştırma
+```
+
 # Krypton ile yazılmış bir program nasıl görünüyor?
 
 [Heron alan formülü](https://tr.wikipedia.org/wiki/Heron_form%C3%BCl%C3%BC) ile kenarları 3,4,5 cm olan bir üçgenin alanını hesaplayalım.
@@ -47,7 +60,9 @@ u = (kenar1 + kenar2 + kenar3) / 2
 alan = karekök(u * (u - kenar1) * (u - kenar2) * (u - kenar3))
 yazdır(alan)
 ```
+
 Sonuç:
+
 ```
 6
 ```
