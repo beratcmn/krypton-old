@@ -45,7 +45,7 @@ değişken kenar3 = 5
 
 u = (kenar1 + kenar2 + kenar3) / 2
 alan = karekök(u * (u - kenar1) * (u - kenar2) * (u - kenar3))
-yazdır(alan + " cm^2")
+yazdır(alan)
 ```
 
 ## Özellikler
