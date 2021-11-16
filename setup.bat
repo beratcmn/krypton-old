@@ -2,5 +2,5 @@
 md C:\Krypton
 copy src\main.py C:\Krypton
 copy src\krypton.bat C:\Krypton
-setx Krypton "C:\Krypton"
+::setx path "%PATH%;C:\Krypton"
 pause
