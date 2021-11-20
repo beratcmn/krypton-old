@@ -40,6 +40,7 @@ krypton dosyanızın_yolu/dosyanızın_adı.kr
 ```
 
 Python çevirisini görmek için ise;
+
 ```
 krypton dosyanızın_yolu/dosyanızın_adı.kr çalıştırma
 ```
@@ -76,7 +77,7 @@ Sonuç:
 - [x] for ve while döngüleri
 - [x] kare, karekök, küp, küpkök, mutlak değer matematiksel fonksiyonları
 - [x] askıya alma (time.sleep)
-- [ ] sınıf yapısı
+- [x] sınıf yapısı (dataclass)
 - [ ] input desteği
 - [ ] break yapısı
 - [ ] list yapısı

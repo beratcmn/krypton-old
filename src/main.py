@@ -101,8 +101,18 @@ def EvalLine(InputLine: str):
     if len(timesleep_matches) > 0:
         FinalLine = re.sub("bekle\(", "mithen.bekle(", FinalLine)
 
+    # class
+    class_matches = re.findall('sınıf .*', FinalLine)
+    if len(class_matches) > 0:
+        _line = re.sub("sınıf ", "class ", FinalLine) + ":"
+        FinalLine = ["@dataclass", _line]
+
     # Final return
-    FinalLine = re.sub("\/tab\/", "    ", FinalLine)
+    if isinstance(FinalLine, str):
+        FinalLine = re.sub("\/tab\/", "    ", FinalLine)
+    elif isinstance(FinalLine, list):
+        for i in FinalLine:
+            FinalLine[FinalLine.index(i)] = re.sub("\/tab\/", "    ", i)
     return FinalLine
 
 
@@ -112,6 +122,7 @@ def Compile(_filename: str, _run: bool):
     outputLines = []
 
     outputLines.append("from mithen import mithen")
+    outputLines.append("from dataclasses import dataclass")
 
     filename_output = _filename.replace(extension, ".py").strip()
 
@@ -125,7 +136,12 @@ def Compile(_filename: str, _run: bool):
         #newLine = _el if _el != "" else _il
         # delete ( and newLine != "") if you want an exact translation in terms of spaces and line breaks.
         # if newLine != None and newLine != "":
-        outputLines.append(EvalLine(_il))
+        _newLine = EvalLine(_il)
+        if isinstance(_newLine, str):
+            outputLines.append(_newLine)
+        elif isinstance(_newLine, list):
+            for _i in _newLine:
+                outputLines.append(_i)
 
     outputFile = open(filename_output, "w+", encoding="utf-8")
     for line in outputLines:
