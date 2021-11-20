@@ -78,7 +78,7 @@ Sonuç:
 - [x] kare, karekök, küp, küpkök, mutlak değer matematiksel fonksiyonları
 - [x] askıya alma (time.sleep)
 - [x] sınıf yapısı (dataclass)
-- [ ] input desteği
+- [x] input desteği
 - [ ] break yapısı
-- [ ] list yapısı
-- [ ] dictionary yapısı
+- [ ] list veri tipi
+- [ ] dictionary veri tipi

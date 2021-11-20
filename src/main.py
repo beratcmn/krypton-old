@@ -9,43 +9,43 @@ def EvalLine(InputLine: str):
     FinalLine = re.sub("    ", "/tab/", InputLine)
 
     # print
-    print_matches = re.findall('yazdır\("*.*"*\)', FinalLine)
+    print_matches = re.findall('yazdır\("*.*"*\)', str(FinalLine))
     if len(print_matches) > 0:
         # print_matches[0].replace("yazdır", "print")
-        FinalLine = re.sub("yazdır\(", "print(", FinalLine)
+        FinalLine = re.sub("yazdır\(", "print(", str(FinalLine))
 
     # variable decleration
-    var_matches = re.findall('değişken .* = .*', FinalLine)
+    var_matches = re.findall('değişken .* = .*', str(FinalLine))
     if len(var_matches) == 0:
-        var_matches2 = re.findall('değişken .*', FinalLine)
+        var_matches2 = re.findall('değişken .*', str(FinalLine))
         if len(var_matches2) > 0:
-            FinalLine = re.sub("değişken ", "", FinalLine) + " = None"
+            FinalLine = re.sub("değişken ", "", str(FinalLine)) + " = None"
     else:
-        FinalLine = str(re.sub("değişken ", "", FinalLine))
+        FinalLine = str(re.sub("değişken ", "", str(FinalLine)))
 
     # if
     if_matches = re.findall('eğer .*', FinalLine)
     if len(if_matches) > 0:
-        FinalLine = re.sub("eğer ", "if ", FinalLine, 1) + ":"
+        FinalLine = re.sub("eğer ", "if ", str(FinalLine), 1) + ":"
 
     # elif
-    elif_matches = re.findall('değilse ve .*', FinalLine)
+    elif_matches = re.findall('değilse ve .*', str(FinalLine))
     if len(elif_matches) > 0:
-        FinalLine = re.sub("değilse ve ", "elif ", FinalLine, 1) + ":"
+        FinalLine = re.sub("değilse ve ", "elif ", str(FinalLine), 1) + ":"
 
     # else
-    else_matches = re.findall('değilse ?', FinalLine)
+    else_matches = re.findall('değilse ?', str(FinalLine))
     if len(else_matches) > 0:
-        FinalLine = re.sub("değilse ?", "else", FinalLine) + ":"
+        FinalLine = re.sub("değilse ?", "else", str(FinalLine)) + ":"
 
     # def fonksiyon
-    def_matches = re.findall('fonksiyon .*\(.*\)', FinalLine)
+    def_matches = re.findall('fonksiyon .*\(.*\)', str(FinalLine))
     if len(def_matches) > 0:
-        FinalLine = re.sub("fonksiyon ", "def ", FinalLine) + ":"
+        FinalLine = re.sub("fonksiyon ", "def ", str(FinalLine)) + ":"
     else:
-        def_matches2 = re.findall('f .*\(.*\)', FinalLine)
+        def_matches2 = re.findall('f .*\(.*\)', str(FinalLine))
         if len(def_matches2) > 0:
-            FinalLine = re.sub("f ", "def ", FinalLine, 1) + ":"
+            FinalLine = re.sub("f ", "def ", str(FinalLine), 1) + ":"
 
     # for
     for_matches = re.findall('.* içindeki herbir .* için', FinalLine)
@@ -59,57 +59,62 @@ def EvalLine(InputLine: str):
             FinalLine[1] + " in " + FinalLine[0] + ":"
 
     # while
-    while_matches = re.findall('.* olduğu sürece', FinalLine)
+    while_matches = re.findall('.* olduğu sürece', str(FinalLine))
     if len(while_matches) > 0:
-        while_tab_count = len(re.findall('\/tab\/', FinalLine))
-        FinalLine = re.sub("\/tab\/", "", FinalLine)
+        while_tab_count = len(re.findall('\/tab\/', str(FinalLine)))
+        FinalLine = re.sub("\/tab\/", "", str(FinalLine))
         FinalLine = while_tab_count * "/tab/" + "while " + \
-            re.sub(" olduğu sürece", "", FinalLine, 1) + ":"
+            re.sub(" olduğu sürece", "", str(FinalLine), 1) + ":"
 
     # return
-    return_matches = re.findall('döndür .*', FinalLine)
+    return_matches = re.findall('döndür .*', str(FinalLine))
     if len(return_matches) > 0:
-        FinalLine = re.sub("döndür ", "return ", FinalLine, 1)
+        FinalLine = re.sub("döndür ", "return ", str(FinalLine), 1)
 
     # ^2
-    square_matches = re.findall('kare\(.*?\)', FinalLine)
+    square_matches = re.findall('kare\(.*?\)', str(FinalLine))
     if len(square_matches) > 0:
-        FinalLine = re.sub("kare\(", "mithen.kare(", FinalLine)
+        FinalLine = re.sub("kare\(", "mithen.kare(", str(FinalLine))
 
     # ^3
-    cube_matches = re.findall('küp\(.*?\)', FinalLine)
+    cube_matches = re.findall('küp\(.*?\)', str(FinalLine))
     if len(cube_matches) > 0:
-        FinalLine = re.sub("küp\(", "mithen.kup(", FinalLine)
+        FinalLine = re.sub("küp\(", "mithen.kup(", str(FinalLine))
 
     # ^1/2
-    squareroot_matches = re.findall('karekök\(.*?\)', FinalLine)
+    squareroot_matches = re.findall('karekök\(.*?\)', str(FinalLine))
     if len(squareroot_matches) > 0:
-        FinalLine = re.sub("karekök\(", "mithen.karekok(", FinalLine)
+        FinalLine = re.sub("karekök\(", "mithen.karekok(", str(FinalLine))
 
     # ^1/3
-    cuberoot_matches = re.findall('küpkök\(.*?\)', FinalLine)
+    cuberoot_matches = re.findall('küpkök\(.*?\)', str(FinalLine))
     if len(cuberoot_matches) > 0:
-        FinalLine = re.sub("küpkök\(", "mithen.kupkok(", FinalLine)
+        FinalLine = re.sub("küpkök\(", "mithen.kupkok(", str(FinalLine))
 
     # absolute
-    abs_matches = re.findall('mutlak\(.*?\)', FinalLine)
+    abs_matches = re.findall('mutlak\(.*?\)', str(FinalLine))
     if len(abs_matches) > 0:
-        FinalLine = re.sub("mutlak\(", "mithen.mutlak(", FinalLine)
+        FinalLine = re.sub("mutlak\(", "mithen.mutlak(", str(FinalLine))
 
     # time.sleep()
-    timesleep_matches = re.findall('bekle\(.*?\)', FinalLine)
+    timesleep_matches = re.findall('bekle\(.*?\)', str(FinalLine))
     if len(timesleep_matches) > 0:
-        FinalLine = re.sub("bekle\(", "mithen.bekle(", FinalLine)
+        FinalLine = re.sub("bekle\(", "mithen.bekle(", str(FinalLine))
 
     # class
-    class_matches = re.findall('sınıf .*', FinalLine)
+    class_matches = re.findall('sınıf .*', str(FinalLine))
     if len(class_matches) > 0:
-        _line = re.sub("sınıf ", "class ", FinalLine) + ":"
+        _line = re.sub("sınıf ", "class ", str(FinalLine)) + ":"
         FinalLine = ["@dataclass", _line]
+
+    # input()
+    input_matches = re.findall('girdi\("?.*"?\)', str(FinalLine))
+    if len(input_matches) > 0:
+        FinalLine = re.sub("girdi\(", "input(", str(FinalLine))
 
     # Final return
     if isinstance(FinalLine, str):
-        FinalLine = re.sub("\/tab\/", "    ", FinalLine)
+        FinalLine = re.sub("\/tab\/", "    ", str(FinalLine))
     elif isinstance(FinalLine, list):
         for i in FinalLine:
             FinalLine[FinalLine.index(i)] = re.sub("\/tab\/", "    ", i)
