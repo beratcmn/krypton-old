@@ -16,7 +16,7 @@ Her ne kadar Krypton'a bir yazılım dili demek doğru olmasada yerleşik kütü
 
 Krypton çalışmak için [Mithen](https://github.com/beratcmn/mithen)'e ihtiyaç duyar.
 
-Mithen'in son sürümünü indirmek için;
+Eğer yükleme esnasında problem oluşursa Mithen'in son sürümünü indirmek için;
 
 ```
 python3 -m pip install mithen
@@ -39,7 +39,7 @@ Krypton şu an için sadece terminal üstünden çalışıyor. Herhangi bir Kryp
 krypton dosyanızın_yolu/dosyanızın_adı.kr
 ```
 
-Python çevirisini görmek için ise;
+Krypton programının Python çevirisini görmek için ise;
 
 ```
 krypton dosyanızın_yolu/dosyanızın_adı.kr çalıştırma
