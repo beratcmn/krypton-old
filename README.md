@@ -80,5 +80,9 @@ Sonuç:
 - [x] sınıf yapısı (dataclass)
 - [x] input desteği
 - [ ] break yapısı
+- [ ] int veri tipi
+- [ ] float veri tipi
+- [ ] string veri tipi
+- [ ] bool veri tipi
 - [ ] list veri tipi
 - [ ] dictionary veri tipi
