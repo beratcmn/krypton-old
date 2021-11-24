@@ -2,7 +2,6 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
-import codecs
 
 # Defining TextEditor Class
 
@@ -23,10 +22,10 @@ class TextEditor:
         self.title = StringVar()
         # Declaring Status variable
         self.status = StringVar()
-
+        self.status_color = "#ffffff"
         # Creating Titlebar
         self.titlebar = Label(self.root, textvariable=self.title, font=(
-            "roboto", 15, "normal"), bd=2, relief=GROOVE)
+            "roboto", 12, "normal"), bd=2, relief=FLAT, bg="#26abff", fg="#ffffff")
         # Packing Titlebar to root window
         self.titlebar.pack(side=TOP, fill=BOTH)
         # Calling Settitle Function
@@ -34,7 +33,7 @@ class TextEditor:
 
         # Creating Statusbar
         self.statusbar = Label(self.root, textvariable=self.status, font=(
-            "roboto", 15, "normal"), bd=2, relief=GROOVE)
+            "roboto", 15, "normal"), bd=2, relief=GROOVE, bg=self.status_color)
         # Packing status bar to root window
         self.statusbar.pack(side=BOTTOM, fill=BOTH)
         # Initializing Status
@@ -89,6 +88,15 @@ class TextEditor:
         # Cascading editmenu to menubar
         self.menubar.add_cascade(label="Düzenle", menu=self.editmenu)
 
+        # Creating Run Menu
+        self.helpmenu = Menu(self.menubar, font=(
+            "roboto", 12, "normal"), activebackground="skyblue", tearoff=0)
+        # Adding About Command
+        self.helpmenu.add_command(
+            label="Programı Çalıştır", command=self.runprogram)
+        # Cascading helpmenu to menubar
+        self.menubar.add_cascade(label="Çalıştır", menu=self.helpmenu)
+
         # Creating Help Menu
         self.helpmenu = Menu(self.menubar, font=(
             "roboto", 12, "normal"), activebackground="skyblue", tearoff=0)
@@ -101,7 +109,7 @@ class TextEditor:
         scrol_y = Scrollbar(self.root, orient=VERTICAL)
         # Creating Text Area
         self.txtarea = Text(self.root, yscrollcommand=scrol_y.set, font=(
-            "roboto", 15, "normal"), state="normal", relief=GROOVE)
+            "roboto", 15, "normal"), state="normal", relief=FLAT, bd=2)
         # Packing scrollbar to root window
         scrol_y.pack(side=RIGHT, fill=Y)
         # Adding Scrollbar to text area
@@ -131,9 +139,11 @@ class TextEditor:
         # Calling settitle funtion
         self.settitle()
         # updating status
-        self.status.set("New File Created")
+        self.status.set("Yeni Dosya Oluşturuldu!")
+        self.status_color = "#2e2e2e"
 
     # Defining Open File Funtion
+
     def openfile(self, *args):
         # Exception handling
         try:
@@ -154,7 +164,8 @@ class TextEditor:
                 # Calling Set title
                 self.settitle()
                 # Updating Status
-                self.status.set("Opened Successfully")
+                self.status.set("Dosya başarı ile açıldı!")
+                self.status_color = "#2e2e2e"
         except Exception as e:
             messagebox.showerror("Exception", e)
 
@@ -252,6 +263,11 @@ class TextEditor:
                 self.status.set("Undone Successfully")
         except Exception as e:
             messagebox.showerror("Exception", e)
+
+    # Defining Run Funtion
+    def runprogram(self):
+        messagebox.showinfo("Program çalıştırıldı göya",
+                            "ŞŞŞŞŞ buraları daha eklemedim")
 
     # Defining About Funtion
     def infoabout(self):
