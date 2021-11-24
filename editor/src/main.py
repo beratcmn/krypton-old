@@ -51,51 +51,51 @@ class TextEditor:
             "roboto", 12, "normal"), activebackground="skyblue", tearoff=0)
         # Adding New file Command
         self.filemenu.add_command(
-            label="New", accelerator="Ctrl+N", command=self.newfile)
+            label="Yeni Dosya", accelerator="Ctrl+N", command=self.newfile)
         # Adding Open file Command
         self.filemenu.add_command(
-            label="Open", accelerator="Ctrl+O", command=self.openfile)
+            label="Dosya Aç", accelerator="Ctrl+O", command=self.openfile)
         # Adding Save File Command
         self.filemenu.add_command(
-            label="Save", accelerator="Ctrl+S", command=self.savefile)
+            label="Kaydet", accelerator="Ctrl+S", command=self.savefile)
         # Adding Save As file Command
         self.filemenu.add_command(
-            label="Save As", accelerator="Ctrl+Shift+S", command=self.saveasfile)
+            label="Farklı Kaydet", accelerator="Ctrl+Shift+S", command=self.saveasfile)
         # Adding Seprator
         self.filemenu.add_separator()
         # Adding Exit window Command
         self.filemenu.add_command(
-            label="Exit", accelerator="Ctrl+E", command=self.exit)
+            label="Çıkış", accelerator="Ctrl+E", command=self.exit)
         # Cascading filemenu to menubar
-        self.menubar.add_cascade(label="File", menu=self.filemenu)
+        self.menubar.add_cascade(label="Dosya", menu=self.filemenu)
 
         # Creating Edit Menu
         self.editmenu = Menu(self.menubar, font=(
             "roboto", 12, "normal"), activebackground="skyblue", tearoff=0)
         # Adding Cut text Command
         self.editmenu.add_command(
-            label="Cut", accelerator="Ctrl+X", command=self.cut)
+            label="Kes", accelerator="Ctrl+X", command=self.cut)
         # Adding Copy text Command
         self.editmenu.add_command(
-            label="Copy", accelerator="Ctrl+C", command=self.copy)
+            label="Kopyala", accelerator="Ctrl+C", command=self.copy)
         # Adding Paste text command
         self.editmenu.add_command(
-            label="Paste", accelerator="Ctrl+V", command=self.paste)
+            label="Yapıştır", accelerator="Ctrl+V", command=self.paste)
         # Adding Seprator
         self.editmenu.add_separator()
         # Adding Undo text Command
         self.editmenu.add_command(
-            label="Undo", accelerator="Ctrl+U", command=self.undo)
+            label="Geri Al", accelerator="Ctrl+U", command=self.undo)
         # Cascading editmenu to menubar
-        self.menubar.add_cascade(label="Edit", menu=self.editmenu)
+        self.menubar.add_cascade(label="Düzenle", menu=self.editmenu)
 
         # Creating Help Menu
         self.helpmenu = Menu(self.menubar, font=(
             "roboto", 12, "normal"), activebackground="skyblue", tearoff=0)
         # Adding About Command
-        self.helpmenu.add_command(label="About", command=self.infoabout)
+        self.helpmenu.add_command(label="Hakkında", command=self.infoabout)
         # Cascading helpmenu to menubar
-        self.menubar.add_cascade(label="Help", menu=self.helpmenu)
+        self.menubar.add_cascade(label="Yardım", menu=self.helpmenu)
 
         # Creating Scrollbar
         scrol_y = Scrollbar(self.root, orient=VERTICAL)
@@ -120,7 +120,7 @@ class TextEditor:
             self.title.set(self.filename)
         else:
             # Updating Title as Untitled
-            self.title.set("İsimsiz")
+            self.title.set("yeni_proje")
 
     # Defining New file Function
     def newfile(self, *args):
@@ -138,12 +138,11 @@ class TextEditor:
         # Exception handling
         try:
             # Asking for file to open
-            self.filename = filedialog.askopenfilename(title="Select file", filetypes=(
-                ("All Files", "*.*"), ("Text Files", "*.txt"), ("Python Files", "*.py")))
+            self.filename = filedialog.askopenfilename(title="Select file", filetypes=(("Krypton Dosyaları", "*.kr"), ("Tüm Dosyalar", "*.*")))
             # checking if filename not none
             if self.filename:
                 # opening file in readmode
-                infile = open(self.filename, "r")
+                infile = open(self.filename, mode='r', encoding="utf-8")
                 # Clearing text area
                 self.txtarea.delete("1.0", END)
                 # Inserting data Line by line into text area
@@ -165,12 +164,12 @@ class TextEditor:
             # checking if filename not none
             if self.filename:
                 data = self.txtarea.get("1.0", END)
-                #outfile = open(self.filename, "w", "utf-8")
-                outfile = codecs.open(self.filename, "w", "utf-8")
+                #outfile = open(self.filename, "w",)
+                outfile = open(self.filename, mode='w', encoding="utf-8")
                 outfile.write(data)
                 outfile.close()
                 self.settitle()
-                self.status.set("Saved Successfully")
+                self.status.set("Başarıyla Kaydedildi!")
             else:
                 self.saveasfile()
         except Exception as e:
@@ -181,12 +180,13 @@ class TextEditor:
         # Exception handling
         try:
             # Asking for file name and type to save
-            untitledfile = filedialog.asksaveasfilename(title="Save file As", defaultextension=".txt", initialfile="Untitled.txt", filetypes=(
-                ("All Files", "*.*"), ("Text Files", "*.txt"), ("Python Files", "*.py")))
+            untitledfile = filedialog.asksaveasfilename(
+                title="Save file As", defaultextension=".kr", initialfile="yeni_proje.kr", filetypes=(("Krypton Dosyaları", "*.kr"), ("Tüm Dosyalar", "*.*")))
             # Reading the data from text area
             data = self.txtarea.get("1.0", END)
             # opening File in write mode
-            outfile = open(untitledfile, "w")
+            #outfile = open(untitledfile, "w")
+            outfile = open(untitledfile, mode='w', encoding="utf-8")
             # Writing Data into file
             outfile.write(data)
             # Closing File
@@ -196,7 +196,7 @@ class TextEditor:
             # Calling Set title
             self.settitle()
             # Updating Status
-            self.status.set("Saved Successfully")
+            self.status.set("Başarıyla Oluşturuldu!")
         except Exception as e:
             messagebox.showerror("Exception", e)
 
@@ -218,9 +218,10 @@ class TextEditor:
 
     # Defining Paste Funtion
     def paste(self, *args):
-        self.txtarea.event_generate("<<Paste>>")
-
+        # self.txtarea.event_generate("<<Paste>>")
+        pass
     # Defining Undo Funtion
+
     def undo(self, *args):
         # Exception handling
         try:
@@ -253,8 +254,8 @@ class TextEditor:
 
     # Defining About Funtion
     def infoabout(self):
-        messagebox.showinfo("About Text Editor",
-                            "A Simple Text Editor\nCreated using Python.")
+        messagebox.showinfo("Editör Hakkında",
+                            "Krypton için geliştirilmiş basit bir kod editörü.\n -Berat Çimen")
 
     # Defining shortcuts Funtion
     def shortcuts(self):
