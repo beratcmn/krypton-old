@@ -138,7 +138,8 @@ class TextEditor:
         # Exception handling
         try:
             # Asking for file to open
-            self.filename = filedialog.askopenfilename(title="Select file", filetypes=(("Krypton Dosyaları", "*.kr"), ("Tüm Dosyalar", "*.*")))
+            self.filename = filedialog.askopenfilename(title="Select file", filetypes=(
+                ("Krypton Dosyaları", "*.kr"), ("Tüm Dosyalar", "*.*")))
             # checking if filename not none
             if self.filename:
                 # opening file in readmode
@@ -281,7 +282,7 @@ class TextEditor:
 
 # Creating TK Container
 root = Tk()
-# Passing Root to TextEditor Class
+root.wm_iconbitmap(bitmap="ico/icon.ico")
 TextEditor(root)
 # Root Window Looping
 root.mainloop()
