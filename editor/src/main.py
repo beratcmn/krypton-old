@@ -3,9 +3,10 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
 
+import os
+
+
 # Defining TextEditor Class
-
-
 class TextEditor:
 
     # Defining Constructor
@@ -33,7 +34,7 @@ class TextEditor:
 
         # Creating Statusbar
         self.statusbar = Label(self.root, textvariable=self.status, font=(
-            "roboto", 15, "normal"), bd=2, relief=GROOVE, bg=self.status_color)
+            "roboto", 12, "normal"), bd=0, relief=GROOVE, bg="#00ff00", fg="#fff")
         # Packing status bar to root window
         self.statusbar.pack(side=BOTTOM, fill=BOTH)
         # Initializing Status
@@ -41,13 +42,13 @@ class TextEditor:
 
         # Creating Menubar
         self.menubar = Menu(self.root, font=(
-            "roboto", 15, "normal"), activebackground="skyblue")
+            "roboto", 15, "normal"), activebackground="#26abff")
         # Configuring menubar on root window
         self.root.config(menu=self.menubar)
 
         # Creating File Menu
         self.filemenu = Menu(self.menubar, font=(
-            "roboto", 12, "normal"), activebackground="skyblue", tearoff=0)
+            "roboto", 12, "normal"), activebackground="#26abff", tearoff=0)
         # Adding New file Command
         self.filemenu.add_command(
             label="Yeni Dosya", accelerator="Ctrl+N", command=self.newfile)
@@ -70,7 +71,7 @@ class TextEditor:
 
         # Creating Edit Menu
         self.editmenu = Menu(self.menubar, font=(
-            "roboto", 12, "normal"), activebackground="skyblue", tearoff=0)
+            "roboto", 12, "normal"), activebackground="#26abff", tearoff=0)
         # Adding Cut text Command
         self.editmenu.add_command(
             label="Kes", accelerator="Ctrl+X", command=self.cut)
@@ -90,16 +91,16 @@ class TextEditor:
 
         # Creating Run Menu
         self.helpmenu = Menu(self.menubar, font=(
-            "roboto", 12, "normal"), activebackground="skyblue", tearoff=0)
+            "roboto", 12, "normal"), activebackground="#26abff", tearoff=0)
         # Adding About Command
         self.helpmenu.add_command(
-            label="Programı Çalıştır", command=self.runprogram)
+            label="Programı Çalıştır", accelerator="F5", command=self.run)
         # Cascading helpmenu to menubar
         self.menubar.add_cascade(label="Çalıştır", menu=self.helpmenu)
 
         # Creating Help Menu
         self.helpmenu = Menu(self.menubar, font=(
-            "roboto", 12, "normal"), activebackground="skyblue", tearoff=0)
+            "roboto", 12, "normal"), activebackground="#26abff", tearoff=0)
         # Adding About Command
         self.helpmenu.add_command(label="Hakkında", command=self.infoabout)
         # Cascading helpmenu to menubar
@@ -143,12 +144,11 @@ class TextEditor:
         self.status_color = "#2e2e2e"
 
     # Defining Open File Funtion
-
     def openfile(self, *args):
         # Exception handling
         try:
             # Asking for file to open
-            self.filename = filedialog.askopenfilename(title="Select file", filetypes=(
+            self.filename = filedialog.askopenfilename(title="Dosya Seç", filetypes=(
                 ("Krypton Dosyaları", "*.kr"), ("Tüm Dosyalar", "*.*")))
             # checking if filename not none
             if self.filename:
@@ -210,11 +210,11 @@ class TextEditor:
             # Updating Status
             self.status.set("Başarıyla Oluşturuldu!")
         except Exception as e:
-            messagebox.showerror("Exception", e)
+            messagebox.showerror("Hata", e)
 
     # Defining Exit Funtion
     def exit(self, *args):
-        op = messagebox.askyesno("WARNING", "Your Unsaved Data May be Lost!!")
+        op = messagebox.askyesno("UYARI", "Kaydetmemediğiniz veri SİLİNİR!!")
         if op > 0:
             self.root.destroy()
         else:
@@ -232,8 +232,8 @@ class TextEditor:
     def paste(self, *args):
         # self.txtarea.event_generate("<<Paste>>")
         pass
-    # Defining Undo Funtion
 
+    # Defining Undo Funtion
     def undo(self, *args):
         # Exception handling
         try:
@@ -265,9 +265,8 @@ class TextEditor:
             messagebox.showerror("Exception", e)
 
     # Defining Run Funtion
-    def runprogram(self):
-        messagebox.showinfo("Program çalıştırıldı göya",
-                            "ŞŞŞŞŞ buraları daha eklemedim")
+    def run(self, *args):
+        os.system('start cmd /c krypton ' + self.filename)
 
     # Defining About Funtion
     def infoabout(self):
@@ -294,6 +293,8 @@ class TextEditor:
         self.txtarea.bind("<Control-v>", self.paste)
         # Binding Ctrl+u to undo funtion
         self.txtarea.bind("<Control-u>", self.undo)
+        # Binding F5 to run funtion
+        self.txtarea.bind("<F5>", self.run)
 
 
 # Creating TK Container
