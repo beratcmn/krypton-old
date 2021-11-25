@@ -147,7 +147,7 @@ def Compile(_filename: str, _run: bool):
         elif isinstance(_newLine, list):
             for _i in _newLine:
                 outputLines.append(_i)
-    outputLines.append('input("Devam etmek için bir tuşa basınız. ")')
+    #outputLines.append('input("Devam etmek için bir tuşa basınız. ")')
     outputFile = open(filename_output, "w+", encoding="utf-8")
     for line in outputLines:
         outputFile.write(str(line) + "\n")
