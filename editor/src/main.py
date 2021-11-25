@@ -16,7 +16,7 @@ class TextEditor:
         # Title of the window
         self.root.title("Krypton Kod Düzenleyicisi")
         # Window Geometry
-        self.root.geometry("1200x700+200+150")
+        self.root.geometry("1200x700+200+450")
         # Initializing filename
         self.filename = None
         # Declaring Title variable
@@ -110,7 +110,7 @@ class TextEditor:
         scrol_y = Scrollbar(self.root, orient=VERTICAL)
         # Creating Text Area
         self.txtarea = Text(self.root, yscrollcommand=scrol_y.set, font=(
-            "roboto", 15, "normal"), state="normal", relief=FLAT, bd=2)
+            "roboto", 15, "normal"), state="normal", relief=FLAT, bd=10)
         # Packing scrollbar to root window
         scrol_y.pack(side=RIGHT, fill=Y)
         # Adding Scrollbar to text area
