@@ -7,11 +7,49 @@ import tkinter.font as tkfont
 import os
 
 
+# Save Path
+def savepath(_path):
+    path_file = open("path.txt", "w+", encoding="utf-8")
+    path_file.write(str(_path))
+    path_file.close()
+
+
+# Get Path
+def getpath():
+    path_file = open("path.txt", "r", encoding="utf-8")
+    path = path_file.readline(-1)
+    path_file.close()
+    return path
+
+
+# Defining the PopUp Class
+class PopUp(Tk):
+    def __init__(self, master):
+        top = self.top = Toplevel(master)
+        self.top.wm_iconbitmap(bitmap="ico/icon.ico")
+        self.top.geometry("500x150+200+450")
+        self.l = Label(top, text="Krypton Yükleme Yolu;")
+        self.l.pack(ipadx=15, ipady=15)
+        self.e = Entry(top, width=50, bd=1, font=("roboto", 12))
+        self.e.insert(0, getpath())
+        self.e.pack()
+        self.l2 = Label(top, text="")
+        self.l2.pack(ipadx=15, ipady=1)
+        self.b = Button(top, text='Tamam',
+                        command=self.cleanup, bd=1, relief=FLAT, background="#6e6e6e")
+        self.b.pack()
+
+    def cleanup(self):
+        self.path_value = self.e.get()
+        self.top.destroy()
+
+
 # Defining TextEditor Class
 class TextEditor:
 
     # Defining Constructor
     def __init__(self, root):
+        self.path_value = getpath()
         # Assigning root
         self.root = root
         # Title of the window
@@ -91,13 +129,22 @@ class TextEditor:
         self.menubar.add_cascade(label="Düzenle", menu=self.editmenu)
 
         # Creating Run Menu
-        self.helpmenu = Menu(self.menubar, font=(
+        self.runmenu = Menu(self.menubar, font=(
             "roboto", 12, "normal"), activebackground="#26abff", tearoff=0)
-        # Adding About Command
-        self.helpmenu.add_command(
+        # Adding Run Command
+        self.runmenu.add_command(
             label="Programı Çalıştır", accelerator="F5", command=self.run)
-        # Cascading helpmenu to menubar
-        self.menubar.add_cascade(label="Çalıştır", menu=self.helpmenu)
+        # Cascading runmenu to menubar
+        self.menubar.add_cascade(label="Çalıştır", menu=self.runmenu)
+
+        # Creating Settings Menu
+        self.settingsmenu = Menu(self.menubar, font=(
+            "roboto", 12, "normal"), activebackground="#26abff", tearoff=0)
+        # Adding Path Command
+        self.settingsmenu.add_command(
+            label="Krypton Derleyicisi Yolu", command=self.setpath)
+        # Cascading settingsmenu to menubar
+        self.menubar.add_cascade(label="Ayarlar", menu=self.settingsmenu)
 
         # Creating Help Menu
         self.helpmenu = Menu(self.menubar, font=(
@@ -126,6 +173,7 @@ class TextEditor:
         self.shortcuts()
 
     # Defining settitle function
+
     def settitle(self):
         # Checking if Filename is not None
         if self.filename:
@@ -271,7 +319,22 @@ class TextEditor:
     # Defining Run Funtion
     def run(self, *args):
         self.savefile()
-        os.system('start cmd /c krypton ' + self.filename)
+        #os.system('start cmd /c krypton ' + self.filename)
+        if self.path_value == "" or self.path_value == None:
+            messagebox.showerror("Dizin hatası",
+                                 "Varsayılan Krypton Derleyici yolunu doğru girdiğinize emin olun!")
+        else:
+            command = '""' + self.path_value + '" "' + self.filename + '""'
+            print(command)
+            os.system('start cmd /c ' + command)
+
+    # Defining setpath Funtion
+    def setpath(self, *args):
+        #messagebox.showinfo("xd", "XDXDXDXD")
+        self.popup_window = PopUp(self.root)
+        self.root.wait_window(self.popup_window.top)
+        self.path_value = self.popup_window.path_value
+        savepath(self.path_value)
 
     # Defining About Funtion
     def infoabout(self):

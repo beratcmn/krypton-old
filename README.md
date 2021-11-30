@@ -87,3 +87,4 @@ Sonuç:
 - [x] bool veri tipi
 - [x] list veri tipi
 - [x] dictionary veri tipi
+- [ ] pass yapısı
