@@ -82,7 +82,7 @@ Sonuç:
 - [x] break yapısı
 - [ ] len fonksiyonu
 - [x] int veri tipi
-- [ ] float veri tipi
+- [x] float veri tipi
 - [x] string veri tipi
 - [ ] bool veri tipi
 - [x] list veri tipi

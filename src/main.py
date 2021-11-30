@@ -137,6 +137,11 @@ def EvalLine(InputLine: str):
     if len(float_matches) > 0:
         FinalLine = re.sub("kesir\(", "float(", str(FinalLine))
 
+    # bool
+    bool_matches = re.findall("boole(.?\)", str(FinalLine))
+    if len(bool_matches) > 0:
+        FinalLine = re.sub("boole\(", "bool(", str(FinalLine))
+
     # Final return
     if isinstance(FinalLine, str):
         FinalLine = re.sub("\/tab\/", "    ", str(FinalLine))
