@@ -138,4 +138,4 @@ test*
 playground*
 *.txt
 *.todo
-/editor/src/output
+/editor/output
