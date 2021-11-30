@@ -2,6 +2,7 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
+import tkinter.font as tkfont
 
 import os
 
@@ -115,6 +116,9 @@ class TextEditor:
         scrol_y.pack(side=RIGHT, fill=Y)
         # Adding Scrollbar to text area
         scrol_y.config(command=self.txtarea.yview)
+        font = tkfont.Font(font=self.txtarea['font'])
+        tab_width = font.measure(' ' * 4)
+        self.txtarea.config(tabs=(tab_width,))
         # Packing Text Area to root window
         self.txtarea.pack(fill=BOTH, expand=1)
 
