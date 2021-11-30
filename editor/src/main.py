@@ -49,7 +49,12 @@ class TextEditor:
 
     # Defining Constructor
     def __init__(self, root):
-        self.path_value = getpath()
+        try:
+            self.path_value = getpath()
+        except:
+            savepath("")
+            self.path_value = getpath()
+
         # Assigning root
         self.root = root
         # Title of the window
