@@ -1,0 +1,320 @@
+﻿
+[Header]
+ProjectFileVersion = 1.1
+[General]
+Program name = Krypton
+Program version = 0.2
+Windows 2000 = 0
+Windows XP = 1
+Windows Server 2003 = 1
+Windows Vista = 1
+Windows Server 2008 = 1
+Windows 7 = 1
+Windows 8 = 1
+Windows 10 = 1
+Windows Server 2016 = 1
+DoNotCheckOS = 0
+Company name = Berat Çimen
+Website = https://beratcmn.github.io/krypton.html
+SFA = 0
+DFA = 0
+Comp = 1
+[Graphics]
+Wizard image = C:\Program Files (x86)\solicus\InstallForge\images\Wizard_1.bmp
+Header image = C:\Users\berat\Projects\Python\krypton\src\icon_180x180.png
+Show Label = 1
+VisualStylesEnabled = 1
+[Files]
+Installation path = <ProgramFiles>\<Company>\<AppName>\
+Autcip = 1
+[Uninstall]
+Vwau = 0
+Website = https://
+Include uninstaller = 1
+Uninstaller filename = Kaldır
+UseCustomDisplayIcon = 0
+CustomDisplayIcon = <InstallPath>\
+[Licence]
+Licence dialog = 1
+[Finish]
+Sart program = 0
+Reboot computer = 0
+Program = <InstallPath>\
+ProgramArguments = 
+[Shortcuts]
+Allowtc = 0
+Shortcut path = <Company>\<AppName>\
+[Serialoptions]
+Allows = 0
+Number = 1000
+Mask = #####-#####-#####-#####
+[SplashScreen]
+Image = 
+Sound = 
+Time = 2
+PlaySound = 0
+Allow = 0
+[Build]
+File = C:\Users\berat\Projects\Python\krypton\dist\Krpyton Alpha 0.2 Setup.exe
+SetupIconPath = C:\Program Files (x86)\solicus\InstallForge\icons\modern.ico
+UninstallIconPath = ..\icons\ancient.ico
+CompressionMethod = 0
+CompressionLevel = 2
+[Updater]
+Allow = 0
+1 = <AppName>
+2 = <AppVersion>
+3 = http://
+4 = http://
+5 = http://
+6 = Update
+Language = 0
+RunProg = 
+RunProgs = 0
+Execdlls = 0
+[Languages]
+12
+[Files/Dirs]
+C:\Users\berat\Projects\Python\krypton\output\main\_asyncio.pyd
+59.2 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\_bz2.pyd
+78.2 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\_ctypes.pyd
+117.2 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\_decimal.pyd
+241.7 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\_hashlib.pyd
+57.7 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\_lzma.pyd
+149.7 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\_multiprocessing.pyd
+29.2 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\_overlapped.pyd
+44.2 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\_queue.pyd
+26.7 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\_socket.pyd
+72.7 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\_ssl.pyd
+152.2 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-com-l1-1-0.dll
+22.7 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-console-l1-1-0.dll
+12 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-datetime-l1-1-0.dll
+11.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-debug-l1-1-0.dll
+11.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-errorhandling-l1-1-0.dll
+11.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-file-l1-1-0.dll
+15 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-file-l1-2-0.dll
+11.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-file-l2-1-0.dll
+11.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-handle-l1-1-0.dll
+11.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-heap-l1-1-0.dll
+12 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-interlocked-l1-1-0.dll
+11.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-libraryloader-l1-1-0.dll
+12.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-localization-l1-2-0.dll
+14.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-memory-l1-1-0.dll
+12 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-namedpipe-l1-1-0.dll
+11.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-processenvironment-l1-1-0.dll
+12.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-processthreads-l1-1-0.dll
+14 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-processthreads-l1-1-1.dll
+12 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-profile-l1-1-0.dll
+11.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-rtlsupport-l1-1-0.dll
+12 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-string-l1-1-0.dll
+11.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-synch-l1-1-0.dll
+13.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-synch-l1-2-0.dll
+12 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-sysinfo-l1-1-0.dll
+12.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-timezone-l1-1-0.dll
+12 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-util-l1-1-0.dll
+11.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-winrt-error-l1-1-0.dll
+19.3 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-winrt-error-l1-1-1.dll
+18.8 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-winrt-l1-1-0.dll
+19.2 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-core-winrt-string-l1-1-0.dll
+19.8 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-conio-l1-1-0.dll
+12.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-convert-l1-1-0.dll
+15.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-environment-l1-1-0.dll
+12 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-filesystem-l1-1-0.dll
+13.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-heap-l1-1-0.dll
+12.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-locale-l1-1-0.dll
+12 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-math-l1-1-0.dll
+20.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-process-l1-1-0.dll
+12.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-runtime-l1-1-0.dll
+16 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-stdio-l1-1-0.dll
+17.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-string-l1-1-0.dll
+18 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-time-l1-1-0.dll
+14 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\api-ms-win-crt-utility-l1-1-0.dll
+12 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\base_library.zip
+794.3 KB
+zip
+C:\Users\berat\Projects\Python\krypton\output\main\Krypton.exe
+3 MB
+exe
+C:\Users\berat\Projects\Python\krypton\output\main\libcrypto-1_1.dll
+3.3 MB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\libffi-7.dll
+32 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\libopenblas.XWYDX2IKJW2NMTWSFYNGFUWKQU3LYTCZ.gfortran-win_amd64.dll
+32.9 MB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\libssl-1_1.dll
+678.7 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\main.exe.manifest
+1.5 KB
+manifest
+C:\Users\berat\Projects\Python\krypton\output\main\pyexpat.pyd
+187.2 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\python310.dll
+4.2 MB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\select.pyd
+25.2 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\ucrtbase.dll
+1011.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\unicodedata.pyd
+1.1 MB
+pyd
+C:\Users\berat\Projects\Python\krypton\output\main\VCRUNTIME140.dll
+94.9 KB
+dll
+C:\Users\berat\Projects\Python\krypton\output\main\importlib_metadata-4.8.2.dist-info
+N/A
+[Folder]
+C:\Users\berat\Projects\Python\krypton\output\main\numpy
+N/A
+[Folder]
+C:\Users\berat\Projects\Python\krypton\output\main\setuptools-57.4.0.dist-info
+N/A
+[Folder]
+[Licence_Begin]
+1283
+{\rtf1\ansi\ansicpg1254\deff0\deflang1055{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\fs20 MIT License\par
+\par
+Copyright (c) [year] [fullname]\par
+\par
+Permission is hereby granted, free of charge, to any person obtaining a copy\par
+of this software and associated documentation files (the "Software"), to deal\par
+in the Software without restriction, including without limitation the rights\par
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\par
+copies of the Software, and to permit persons to whom the Software is\par
+furnished to do so, subject to the following conditions:\par
+\par
+The above copyright notice and this permission notice shall be included in all\par
+copies or substantial portions of the Software.\par
+\par
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\par
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\par
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\par
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\par
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\par
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\par
+SOFTWARE.\par
+}
+ [Licence_End]
+[Registry]
+[Variables]
+[SCs]
+[IFP_End]
+[Serials]
+[Serials_End]
+[Commands]

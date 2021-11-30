@@ -131,7 +131,6 @@ dmypy.json
 # Custom
 /output
 /test
-/ifp
 *.tr
 *.kr
 test*
