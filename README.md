@@ -84,6 +84,6 @@ Sonuç:
 - [x] int veri tipi
 - [x] float veri tipi
 - [x] string veri tipi
-- [ ] bool veri tipi
+- [x] bool veri tipi
 - [x] list veri tipi
-- [ ] dictionary veri tipi
+- [x] dictionary veri tipi
