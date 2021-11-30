@@ -117,6 +117,11 @@ def EvalLine(InputLine: str):
     if len(break_matches) > 0:
         FinalLine = re.sub("kır", "break", str(FinalLine), 1)
 
+    # list
+    list_matches = re.findall("liste\(.?\)", str(FinalLine))
+    if len(list_matches) > 0:
+        FinalLine = re.sub("liste\(", "list(", str(FinalLine))
+
     # Final return
     if isinstance(FinalLine, str):
         FinalLine = re.sub("\/tab\/", "    ", str(FinalLine))
