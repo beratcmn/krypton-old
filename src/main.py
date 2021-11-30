@@ -132,6 +132,11 @@ def EvalLine(InputLine: str):
     if len(int_matches) > 0:
         FinalLine = re.sub("tam\(", "int(", str(FinalLine))
 
+    # float
+    float_matches = re.findall("kesir(.?\)", str(FinalLine))
+    if len(float_matches) > 0:
+        FinalLine = re.sub("kesir\(", "float(", str(FinalLine))
+
     # Final return
     if isinstance(FinalLine, str):
         FinalLine = re.sub("\/tab\/", "    ", str(FinalLine))
