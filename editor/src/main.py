@@ -270,6 +270,7 @@ class TextEditor:
 
     # Defining Run Funtion
     def run(self, *args):
+        self.savefile()
         os.system('start cmd /c krypton ' + self.filename)
 
     # Defining About Funtion
