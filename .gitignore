@@ -139,4 +139,4 @@ test*
 playground*
 *.txt
 *.todo
-build.json
+/editor/src/output
