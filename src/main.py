@@ -122,6 +122,11 @@ def EvalLine(InputLine: str):
     if len(list_matches) > 0:
         FinalLine = re.sub("liste\(", "list(", str(FinalLine))
 
+    # str
+    str_matches = re.findall("karakter\(.?\)", str(FinalLine))
+    if len(str_matches) > 0:
+        FinalLine = re.sub("karakter\(", "str(", str(FinalLine))
+
     # Final return
     if isinstance(FinalLine, str):
         FinalLine = re.sub("\/tab\/", "    ", str(FinalLine))
