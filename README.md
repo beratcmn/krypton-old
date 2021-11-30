@@ -80,7 +80,7 @@ Sonuç:
 - [x] sınıf yapısı (dataclass)
 - [x] input desteği
 - [x] break yapısı
-- [ ] len fonksiyonu
+- [x] len fonksiyonu
 - [x] int veri tipi
 - [x] float veri tipi
 - [x] string veri tipi

@@ -107,15 +107,15 @@ def EvalLine(InputLine: str):
         _line = re.sub("sınıf ", "class ", str(FinalLine)) + ":"
         FinalLine = ["@dataclass", _line]
 
-    # input()
-    input_matches = re.findall('girdi\("?.*"?\)', str(FinalLine))
-    if len(input_matches) > 0:
-        FinalLine = re.sub("girdi\(", "input(", str(FinalLine))
-
     # break
     break_matches = re.findall("\\bkır\\b", str(FinalLine))
     if len(break_matches) > 0:
         FinalLine = re.sub("kır", "break", str(FinalLine), 1)
+
+    # input()
+    input_matches = re.findall('girdi\("?.*"?\)', str(FinalLine))
+    if len(input_matches) > 0:
+        FinalLine = re.sub("girdi\(", "input(", str(FinalLine))
 
     # list
     list_matches = re.findall("liste\(.?\)", str(FinalLine))
@@ -141,6 +141,16 @@ def EvalLine(InputLine: str):
     bool_matches = re.findall("boole(.?\)", str(FinalLine))
     if len(bool_matches) > 0:
         FinalLine = re.sub("boole\(", "bool(", str(FinalLine))
+
+    # dict
+    dict_matches = re.findall("sözlük(.?\)", str(FinalLine))
+    if len(dict_matches) > 0:
+        FinalLine = re.sub("sözlük\(", "dict(", str(FinalLine))
+
+    # len
+    len_matches = re.findall("uzunluk(.?\)", str(FinalLine))
+    if len(len_matches) > 0:
+        FinalLine = re.sub("uzunluk\(", "len(", str(FinalLine))
 
     # Final return
     if isinstance(FinalLine, str):
