@@ -67,9 +67,9 @@ def EvalLine(InputLine: str):
             re.sub(" olduğu sürece", "", str(FinalLine), 1) + ":"
 
     # return
-    return_matches = re.findall('döndür .*', str(FinalLine))
+    return_matches = re.findall('\\bdöndür ?.*\\b', str(FinalLine))
     if len(return_matches) > 0:
-        FinalLine = re.sub("döndür ", "return ", str(FinalLine), 1)
+        FinalLine = re.sub("döndür", "return", str(FinalLine), 1)
 
     # ^2
     square_matches = re.findall('kare\(.*?\)', str(FinalLine))
@@ -111,6 +111,11 @@ def EvalLine(InputLine: str):
     input_matches = re.findall('girdi\("?.*"?\)', str(FinalLine))
     if len(input_matches) > 0:
         FinalLine = re.sub("girdi\(", "input(", str(FinalLine))
+
+    # break
+    break_matches = re.findall("\\bkır\\b", str(FinalLine))
+    if len(break_matches) > 0:
+        FinalLine = re.sub("kır", "break", str(FinalLine), 1)
 
     # Final return
     if isinstance(FinalLine, str):
