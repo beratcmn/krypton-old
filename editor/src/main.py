@@ -331,7 +331,7 @@ class TextEditor:
         else:
             command = '""' + self.path_value + '" "' + self.filename + '""'
             print(command)
-            os.system('start cmd /c ' + command)
+            os.system('start cmd /k ' + command)
 
     # Defining setpath Funtion
     def setpath(self, *args):
