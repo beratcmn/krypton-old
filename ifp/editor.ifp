@@ -2,8 +2,8 @@
 [Header]
 ProjectFileVersion = 1.1
 [General]
-Program name = Krypton Kod Editörü
-Program version = 0.1
+Program name = Krypton Kod Editörü 0.2
+Program version = 0.2
 Windows 2000 = 0
 Windows XP = 1
 Windows Server 2003 = 1
@@ -75,6 +75,78 @@ Execdlls = 0
 [Languages]
 12
 [Files/Dirs]
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\api-ms-win-crt-stdio-l1-1-0.dll
+17.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\api-ms-win-crt-string-l1-1-0.dll
+18 KB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\api-ms-win-crt-time-l1-1-0.dll
+14 KB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\api-ms-win-crt-utility-l1-1-0.dll
+12 KB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\base_library.zip
+794.3 KB
+zip
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\Krypton Kod Editörü.exe
+3 MB
+exe
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\Krypton Kod Editörü.exe.manifest
+1.5 KB
+manifest
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\libcrypto-1_1.dll
+3.3 MB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\libffi-7.dll
+32 KB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\libopenblas.XWYDX2IKJW2NMTWSFYNGFUWKQU3LYTCZ.gfortran-win_amd64.dll
+32.9 MB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\libssl-1_1.dll
+678.7 KB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\path.txt
+59 Byte
+txt
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\pyexpat.pyd
+187.2 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\python310.dll
+4.2 MB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\select.pyd
+25.2 KB
+pyd
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\tcl86t.dll
+1.8 MB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\tk86t.dll
+1.5 MB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\ucrtbase.dll
+1011.5 KB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\unicodedata.pyd
+1.1 MB
+pyd
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\VCRUNTIME140.dll
+94.9 KB
+dll
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\ico
+N/A
+[Folder]
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\importlib_metadata-4.8.2.dist-info
+N/A
+[Folder]
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\numpy
+N/A
+[Folder]
+C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\setuptools-57.4.0.dist-info
+N/A
+[Folder]
 C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\tcl
 N/A
 [Folder]
@@ -237,82 +309,10 @@ dll
 C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\api-ms-win-crt-runtime-l1-1-0.dll
 16 KB
 dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\api-ms-win-crt-stdio-l1-1-0.dll
-17.5 KB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\api-ms-win-crt-string-l1-1-0.dll
-18 KB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\api-ms-win-crt-time-l1-1-0.dll
-14 KB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\api-ms-win-crt-utility-l1-1-0.dll
-12 KB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\base_library.zip
-794.3 KB
-zip
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\Krypton Kod Editörü.exe
-3 MB
-exe
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\Krypton Kod Editörü.exe.manifest
-1.5 KB
-manifest
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\libcrypto-1_1.dll
-3.3 MB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\libffi-7.dll
-32 KB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\libopenblas.XWYDX2IKJW2NMTWSFYNGFUWKQU3LYTCZ.gfortran-win_amd64.dll
-32.9 MB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\libssl-1_1.dll
-678.7 KB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\path.txt
-52 Byte
-txt
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\pyexpat.pyd
-187.2 KB
-pyd
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\python310.dll
-4.2 MB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\select.pyd
-25.2 KB
-pyd
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\tcl86t.dll
-1.8 MB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\tk86t.dll
-1.5 MB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\ucrtbase.dll
-1011.5 KB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\unicodedata.pyd
-1.1 MB
-pyd
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\VCRUNTIME140.dll
-94.9 KB
-dll
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\ico
-N/A
-[Folder]
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\importlib_metadata-4.8.2.dist-info
-N/A
-[Folder]
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\numpy
-N/A
-[Folder]
-C:\Users\berat\Projects\Python\krypton\editor\output\Krypton Kod Editörü\setuptools-57.4.0.dist-info
-N/A
-[Folder]
 [Licence_Begin]
-1287
+1283
 {\rtf1\ansi\ansicpg1254\deff0\deflang1055{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-\viewkind4\uc1\pard\cf0\fs20 MIT License\par
+\viewkind4\uc1\pard\fs20 MIT License\par
 \par
 Copyright (c) [year] [fullname]\par
 \par
