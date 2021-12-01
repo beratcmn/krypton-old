@@ -133,22 +133,22 @@ def EvalLine(InputLine: str):
         FinalLine = re.sub("tam\(", "int(", str(FinalLine))
 
     # float
-    float_matches = re.findall("kesir(.?\)", str(FinalLine))
+    float_matches = re.findall("kesir\(.?\)", str(FinalLine))
     if len(float_matches) > 0:
         FinalLine = re.sub("kesir\(", "float(", str(FinalLine))
 
     # bool
-    bool_matches = re.findall("boole(.?\)", str(FinalLine))
+    bool_matches = re.findall("boole\(.?\)", str(FinalLine))
     if len(bool_matches) > 0:
         FinalLine = re.sub("boole\(", "bool(", str(FinalLine))
 
     # dict
-    dict_matches = re.findall("sözlük(.?\)", str(FinalLine))
+    dict_matches = re.findall("sözlük\(.?\)", str(FinalLine))
     if len(dict_matches) > 0:
         FinalLine = re.sub("sözlük\(", "dict(", str(FinalLine))
 
     # len
-    len_matches = re.findall("uzunluk(.?\)", str(FinalLine))
+    len_matches = re.findall("uzunluk\(.?\)", str(FinalLine))
     if len(len_matches) > 0:
         FinalLine = re.sub("uzunluk\(", "len(", str(FinalLine))
 
