@@ -1,0 +1,26 @@
+- [ ] Dil için gerekli diğer özellikleri ekle.
+-- [X] while döngüsü ekle .
+-- [X] Fonskiyon desteği ekle.
+-- [X] Sınıf desteği ekle. (Dataclass öncelikli olabilir.)
+-- [X] break ekle.
+-- [X] input ekle.
+-- [X] list ekle.
+-- [X] str ekle.
+-- [X] bool ekle.
+-- [X] int ekle.
+-- [X] float ekle.
+-- [X] dict ekle.
+-- [ ] len ekle.
+- [X] README yaz.
+- [ ] Logo tasarla.
+- [ ] Öğretici ve README içinde rehber hazırla.
+- [X] Çekirdek özellikleri kapsayan gereksinimler için pip paketi oluştur.
+- [X] pip paketinden sonra libs dosyasından kurtul.
+- [X] Kurulum için .bat dosyası hazırla.
+- [X] Daha iyi bir setup.bat hazırla.
+- [ ] Krypton için websitesi hazırla (beratcmn.github.io/krypton).
+- [ ] Editör hazırla.
+
+
+- Bugfixes
+-- [X] Stringleri ayıkla
