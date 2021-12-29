@@ -24,7 +24,7 @@ python3 -m pip install mithen
 
 # Kurulum
 
-Kurulum için "setup.bat" dosyasını çalıştırmanız yeterli. Ardından Krypton'u istediğiniz gibi kullabilirsiniz.
+Releases sekmesinde yayınlanan son Düzenleyici ve Derleyiciyi indirebilirsiniz.
 
 # Gereksinimler
 
