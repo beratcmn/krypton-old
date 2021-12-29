@@ -18,9 +18,10 @@
 - [X] pip paketinden sonra libs dosyasından kurtul.
 - [X] Kurulum için .bat dosyası hazırla.
 - [X] Daha iyi bir setup.bat hazırla.
-- [ ] Krypton için websitesi hazırla (beratcmn.github.io/krypton).
-- [ ] Editör hazırla.
+- [X] Krypton için websitesi hazırla (beratcmn.github.io/krypton.html).
+- [X] Editör hazırla.
+- [ ] Mithen'i "import list" mantığı ile değiştir.
 
 
-- Bugfixes
+- Hata Düzeltmeleri
 -- [X] Stringleri ayıkla
