@@ -131,11 +131,10 @@ dmypy.json
 # Custom
 /output
 /test
-*.tr
 *.kr
 test*
 *test*
 playground*
 *.txt
-*.todo
+#*.todo
 /editor/output
