@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # Custom
-/output
+/compiler/output
 /test
 *.kr
 test*
