@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # Custom
-/compiler/output
+output
 /test
 *.kr
 test*
@@ -138,3 +138,4 @@ playground*
 *.txt
 #*.todo
 /editor/output
+/compiler/output
