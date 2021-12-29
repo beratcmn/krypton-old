@@ -1,12 +1,48 @@
 import os
 import sys
 import re
+import random
 
 extension = ".kr"
+
+# stores ids and strings like [{id:155000,string:"sa"}]
+global_string_ids: list[dict] = []
+
+
+def CryptString(inputStr: str):
+    global global_string_ids
+
+    new_id = random.randint(100_000, 999_999)
+
+    for pair in global_string_ids:
+        if new_id == pair["id"]:
+            return CryptString(inputStr)
+
+    new_pair = {"id": new_id, "string": inputStr}  # inputStr[1:-1]
+    global_string_ids.append(new_pair)
+
+    return str(new_id)
+
+
+def DecryptString(inputId: int):
+    global global_string_ids
+
+    for pair in global_string_ids:
+        if inputId == pair["id"]:
+            return pair["string"]
+
+    return "None"
 
 
 def EvalLine(InputLine: str):
     FinalLine = re.sub("    ", "/tab/", InputLine)
+
+    # string crypt
+    #string_query = '("|' + "').*(" + '"|' + "')"
+    string_matches = re.findall('".*"', str(FinalLine))
+    if len(string_matches) > 0:
+        FinalLine = re.sub(
+            '".*"', "<str>" + CryptString(str(string_matches[0])) + "<str/>", str(FinalLine))
 
     # print
     print_matches = re.findall('yazdır\("*.*"*\)', str(FinalLine))
@@ -153,6 +189,12 @@ def EvalLine(InputLine: str):
         FinalLine = re.sub("uzunluk\(", "len(", str(FinalLine))
 
     # Final return
+    # string decrypt
+    final_string_matches = re.findall('<str>\d{6,6}<str\/>', str(FinalLine))
+    if len(final_string_matches) > 0:
+        FinalLine = re.sub(
+            "<str>\d{6,6}<str\/>", DecryptString(int(str(final_string_matches[0])[5:-6])), str(FinalLine))
+
     if isinstance(FinalLine, str):
         FinalLine = re.sub("\/tab\/", "    ", str(FinalLine))
     elif isinstance(FinalLine, list):
